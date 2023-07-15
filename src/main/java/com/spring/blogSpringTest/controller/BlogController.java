@@ -4,6 +4,7 @@ import com.spring.blogSpringTest.model.Post;
 import com.spring.blogSpringTest.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,11 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
+
     @RequestMapping(value = "/posts",method = RequestMethod.GET)
     public ModelAndView getPosts(){
         ModelAndView mv = new ModelAndView("posts");
@@ -23,6 +29,14 @@ public class BlogController {
         mv.addObject("posts",posts);
         return mv;
 
+    }
+
+    @RequestMapping(value="/posts/{id}", method=RequestMethod.GET)
+    public ModelAndView getPostDetails(@PathVariable("id") long id){
+        ModelAndView mv = new ModelAndView("postDetails");
+        Post post = blogService.findById(id);
+        mv.addObject("post", post);
+        return mv;
     }
 
 }
