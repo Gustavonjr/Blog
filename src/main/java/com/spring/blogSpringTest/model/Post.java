@@ -15,14 +15,14 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotBlank
+    @NotBlank(message = "O título é obrigatório")
     private String titulo;
-    @NotBlank
+    @NotBlank(message = "O autor é obrigatório")
     private String autor;
 
     @JsonFormat (shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private LocalDate data;
-    @NotBlank
+    @NotBlank(message = "O texto é obrigatório")
     @Lob
     @Column(columnDefinition = "TEXT")
     private String texto;
