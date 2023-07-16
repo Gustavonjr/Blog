@@ -16,10 +16,9 @@ Antes de executar o projeto, é necessário configurar o banco de dados MySQL. S
 
 2. Abra o arquivo `src/main/resources/application.properties` e atualize as propriedades relacionadas ao banco de dados com as informações do seu ambiente:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/{nome_do_banco_de_dados}
-spring.datasource.username={usuario}
-spring.datasource.password={senha}
-
+`spring.datasource.url=jdbc:mysql://localhost:3306/{nome_do_banco_de_dados}`
+`spring.datasource.username={usuario}`
+`spring.datasource.password={senha}`
 
 Certifique-se de substituir `{nome_do_banco_de_dados}`, `{usuario}` e `{senha}` pelas configurações corretas do seu ambiente.
 
