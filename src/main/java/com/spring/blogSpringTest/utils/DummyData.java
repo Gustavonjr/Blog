@@ -3,7 +3,6 @@ package com.spring.blogSpringTest.utils;
 import com.spring.blogSpringTest.model.Post;
 import com.spring.blogSpringTest.reposiitory.BlogRepository;
 
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
